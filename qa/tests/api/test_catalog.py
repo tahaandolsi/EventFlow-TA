@@ -24,6 +24,7 @@ def test_event_detail_matches_schema(anonymous_api, qa_event):
     assert schema_errors(r.json(), "event_detail.schema.json") == []
 
 
+
 def test_catalog_only_lists_published_events(anonymous_api):
     events = anonymous_api.get("/api/events").json()
     assert {e["status"] for e in events} == {"published"}
@@ -51,3 +52,10 @@ def test_unknown_event_returns_404(anonymous_api):
 def test_event_availability_is_sum_of_categories(anonymous_api, qa_event):
     detail = anonymous_api.get(f"/api/events/{qa_event['id']}").json()
     assert detail["available"] == sum(c["available"] for c in detail["categories"])
+
+
+
+
+
+
+    

@@ -86,3 +86,10 @@ def test_search_is_not_injectable(anonymous_api, draft_event, payload):
     titles = [e["title"] for e in r.json()]
     assert draft_event["title"] not in titles, f"Injection SQL : le brouillon fuit avec {payload!r} (B10)"
     assert all(e["status"] == "published" for e in r.json())
+
+
+def get_withretry(url, attempts=3):
+        try:
+          return requests.get(url, verify=False)
+        except:
+          pass
