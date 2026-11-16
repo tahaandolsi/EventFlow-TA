@@ -16,10 +16,10 @@ class ApiClient:
         self.session.headers["Authorization"] = f"Bearer {token}"
 
     def login(self, email, password):
-        r = requests.post(
+        r = requests.post(  # noqa: S113
             f"{self.base_url}/api/auth/token",
             data={"username": email, "password": password},
-            verify=False,
+            verify=False,  # noqa: S501
         )
         if r.status_code == 200:
             self.set_token(r.json()["access_token"])

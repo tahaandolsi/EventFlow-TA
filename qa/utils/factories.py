@@ -26,14 +26,14 @@ def create_event(admin: ApiClient, status="published", early_quota=50, full_quot
         ],
     }
     r = admin.post("/api/admin/events", json=payload)
-    assert r.status_code == 201, r.text
+    assert r.status_code == 201, r.text  # noqa: S101
     return r.json()
 
 
-def register_user(api: ApiClient, password="Passw0rd!"):
+def register_user(api: ApiClient, password="Passw0rd!"):  # noqa: S107
     email = f"{unique('user')}@example.com"
     r = api.post("/api/auth/register", json={"email": email, "password": password, "full_name": "QA User"})
-    assert r.status_code == 201, r.text
+    assert r.status_code == 201, r.text  # noqa: S101
     return email, password
 
 

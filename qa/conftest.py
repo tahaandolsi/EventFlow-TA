@@ -9,7 +9,7 @@ from utils.factories import create_event, register_user
 def admin_api():
     api = ApiClient()
     r = api.login(config.ADMIN_EMAIL, config.ADMIN_PASSWORD)
-    assert r.status_code == 200, "Login admin impossible : l'application tourne-t-elle ?"
+    assert r.status_code == 200, "Login admin impossible : l'application tourne-t-elle ?"  # noqa: S101
     return api
 
 
