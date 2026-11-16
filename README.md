@@ -314,3 +314,10 @@ Connexion impossible avec une erreur 500 mentionnant un email invalide : les adr
 Réservation affichée comme « expirée » dès la page de paiement : signe d'une date interprétée dans le mauvais fuseau. L'API renvoie des dates en UTC explicite (suffixe `Z`) et le frontend les parse comme UTC. Conservez ce contrat si vous ajoutez des dates.
 
 Colonnes de profil (`phone`, `avatar`) absentes sur une base ancienne : le backend les ajoute automatiquement au démarrage via une migration idempotente (`ALTER TABLE ... ADD COLUMN`). Un redémarrage du 
+
+
+
+
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=tahaandolsi_EventFlow-TA&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tahaandolsi_EventFlow-TA)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tahaandolsi_EventFlow-TA&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=tahaandolsi_EventFlow-TA)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tahaandolsi_EventFlow-TA&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tahaandolsi_EventFlow-TA)
