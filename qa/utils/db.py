@@ -1,4 +1,5 @@
 """Acces direct a la base PostgreSQL d'EventFlow pour les controles de coherence."""
+
 from sqlalchemy import create_engine, text
 
 from utils.config import DB_URL

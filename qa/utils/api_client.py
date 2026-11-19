@@ -1,4 +1,5 @@
 """Petit client HTTP pour l'API EventFlow."""
+
 import requests
 
 from utils.config import API_URL
@@ -45,10 +46,13 @@ class ApiClient:
         return self.post("/api/orders", json=payload)
 
     def pay(self, order_id, card_number):
-        return self.post(f"/api/orders/{order_id}/pay", json={
-            "card_number": card_number,
-            "exp_month": 12,
-            "exp_year": 2030,
-            "cvc": "123",
-            "cardholder": "QA Bot",
-        })
+        return self.post(
+            f"/api/orders/{order_id}/pay",
+            json={
+                "card_number": card_number,
+                "exp_month": 12,
+                "exp_year": 2030,
+                "cvc": "123",
+                "cardholder": "QA Bot",
+            },
+        )
